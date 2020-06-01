@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>菜单管理</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common/main.css"/>
+	<link rel="stylesheet" type="text/css" href="../../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../easyui/themes/icon.css">
+	<script type="text/javascript" src="../../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/menumanage.js"></script>
+ </head>
+  
+  <body>
+    		<!-- 查询表头部 -->
+    		<table class='btbHead'>
+    			<tr>
+    				<td style="width:25%;">
+    					<img src="../images/title.gif" align="absmiddle">菜单管理
+    				</td>
+    				<td style="text-align:right;">
+  						<a href="#" id="queryBtn" class="easyui-linkbutton" onclick="addRootMenu()" iconCls="icon-add">增加第一级</a>
+  						<a href="#" id="queryBtn" class="easyui-linkbutton" onclick="addNextMenu()" iconCls="icon-add">增加下级</a>
+  						<a href="#" id="queryBtn" class="easyui-linkbutton" onclick="modifyMenu()" iconCls="icon-edit">&nbsp;修&nbsp;&nbsp;改&nbsp;</a>
+  					</td>
+    			</tr>
+    		</table>
+    		
+    	<div style="margin:5px 0;"></div>
+    	<table id="menuTreeGrid" class="easyui-treegrid" style="width:100%;">
+		<thead>
+			<tr>
+				<th data-options="field:'menuName',halign:'center',align:'left'" width="14%">菜单名称</th>
+				<th data-options="field:'menuId',halign:'center',align:'left'" width="8%">菜单编号</th>
+				<th data-options="field:'isSpecFunction',halign:'center',align:'center'" width="8%" formatter="isSpecFunctionFormatter">是否特殊功能</th>
+				<th data-options="field:'isSysManage',halign:'center',align:'center'" width="8%" formatter="isSysManageFormatter">是否系统菜单</th>
+				<th data-options="field:'url',halign:'center',align:'left'" width="38%">URL</th>
+				<th data-options="field:'defaultImg',halign:'center',align:'left'" width="10%">默认图标</th>
+				<th data-options="field:'sortNo',halign:'center',align:'center'" width="7%" >排序号</th>
+				<th data-options="field:'isUsed',halign:'center',align:'center'" width="7%" formatter="isUsedFormatter">有效否</th>
+			</tr>
+		</thead>
+	</table>
+	
+	<!-- 鼠标右键编辑事件 -->
+	<div id="mm" class="easyui-menu" style="width:120px;">
+		<div  data-options="iconCls:'icon-add'" onclick="addNextMenu()">增加下级</div>
+		<div class="menu-sep"></div>
+		<div  data-options="iconCls:'icon-edit'" onclick="modifyMenu()">修改菜单</div>
+	</div>
+	
+	<!-- 增加第一级弹窗 -->
+
+	
+	<!-- 增加下级弹窗 -->
+	
+	
+	<!-- 修改菜单 -->
+	
+  </body>
+</html>

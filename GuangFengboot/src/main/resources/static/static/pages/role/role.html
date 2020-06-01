@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>角色管理</title>
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery-easyui-1.7.0/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery-easyui-1.7.0/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/role.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dsSelect.css"/>
+    <link rel="stylesheet" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../../lib/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../js/commom.js"></script>
+</head>
+<body>
+<div id="top-div">
+    <i class="fa fa-th fa-2x" id="ico" aria-hidden="true"></i>
+    <span id="title">角色管理</span>
+    <div id="top-button">
+        <a href="#" class="easyui-linkbutton" id="search">查询角色</a>
+        <a href="#" class="easyui-linkbutton" id="add">新增角色</a>
+        <a href="#" class="easyui-linkbutton" id="update">修改角色</a>
+        <a href="#" class="easyui-linkbutton" id="remove">删除角色</a>
+    </div>
+</div>
+<form id="search-form">
+    <div id="centre-div">
+        <i class="fa fa-list fa-3px" id="centre-ico" aria-hidden="true"></i>
+        <span>角色列表</span>&emsp;&emsp;
+        <span id="search-span">角色名：<input class="easyui-textbox" id="search-name" name="rname"/></span>
+    </div>
+</form>
+
+<table id="table" class="easyui-datagrid"></table>
+
+<div class="easyui-dialog" id="add-div">
+    <form id="add-role-form">
+        <span class="span-rid">角色ID：<input class="easyui-textbox" id="add-rid" name="rid"></span>
+        <span class="span-rname">角色名：<input class="easyui-textbox" id="add-rname" name="rname"></span>
+        <span class="span-rdesc"><span class="text-rdesc">描&emsp;述：</span><input class="easyui-textbox" id="add-rdesc"
+                                                                                 name="rdesc"></span>
+        <span class="role-person">成&emsp;员：</span>
+        <!--正文-->
+        <div class="dsSelect" id="dsSelectTemp">
+
+        </div>
+    </form>
+</div>
+<div class="easyui-dialog" id="update-div">
+    <form id="update-role-form">
+        <span class="span-rid">角色ID：<input class="easyui-textbox" id="update-rid" name="rid"></span>
+        <span class="span-rname">角色名：<input class="easyui-textbox" id="update-rname" name="rname"></span>
+        <span class="span-rdesc"><span class="text-rdesc">描&emsp;述：</span>
+        <input class="easyui-textbox" id="update-rdesc" name="rdesc"></span>
+        <span class="role-person">成&emsp;员：</span>
+        <!--正文-->
+        <div class="dsSelect" id="left-right-input">
+
+        </div>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="js/dsSelect.js"></script>
+<script type="text/javascript" src="js/role.js"></script>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gf.Dao.UserDao">
+	<sql id="resultSysUser">
+		user_id as usernamme,
+		user_name as uname,
+		password as password,
+		gender as gender,
+		tel as tel,
+		state as state
+	</sql>
+	
+	<!-- 查询 全部用户 信息 -->
+	<select id="getAllUser" parameterType="com.gf.Bo.UserLoginBo" resultMap="com.gf.Bo.UserLoginBo">
+		select <include refid="resultSysUser"></include>
+		 from sys_user
+		 <where>
+		 	<if test="keyWord != null and keyWord != ''">
+				USER_ID like '%${keyWord}%' or
+				USER_NAME like '%${keyWord}%'
+			</if>
+			<if test="state != null and state!=''">
+				 and state = #{state}
+			</if>
+		 </where>
+		 order by USER_ID 
+	</select>
+	<!-- 新增用户信息 -->
+	<insert id="addSysUser" parameterType="com.gf.Po.UserLogin">
+		insert into sys_user(
+			USER_ID,
+			USER_NAME,
+			PASSWORD,
+			GENDER,
+			TEL,
+			STATE
+		)
+		values(
+			#{usernamme},
+			#{uname},
+			MD5(#{password}),
+			#{gender},
+			#{tel},
+			#{state}
+		)
+	</insert>
+	<!-- 修改用户信息不能修改 账号 -->
+		<update id="modifySysUser" parameterType="com.gf.Po.UserLogin">
+		update sys_user
+		<set>
+			<if test="uname !=null and uname''">
+			user_name =#{uname}
+			</if>
+			<if test="password != null and password !=''">
+			password= MD5(#{password})
+			</if>
+			<if test="gender  != null and gender != ''">
+			gender= #{gender}
+			</if>
+			<if test="tel != null and  tel != ''">
+			tel =#{tel}
+			</if>
+			<if test="state !=null and state !=''">
+			state =#{state}
+			</if>
+		
+		</set>
+		</update>
+	<!-- 根据登录输入的账号查询对象 -->
+		<select id="isTrueUser" parameterType="String" resultType="com.gf.Po.UserLogin">
+		select
+			*
+		from sys_user 
+		where user_id = #{username}
+	</select>
+	
+	<!-- 删除用户信息 -->
+	<delete id="deletesUser" parameterType="String">
+	delete from sys_user where user_id in (${username})
+		</delete>
+		
+			<!-- 根据ID删除对应ID所属角色记录 -->
+	<delete id="removeRoleMemberById" parameterType="String">
+		delete from sys_role_member where USER_ID = #{username}
+	</delete>
+	
+	<!-- 添加对应ID所属角色记录 -->
+	<insert id="addRoleMember" parameterType="com.gf.Po.RoleMemberPo">
+		insert into sys_role_member(
+			ROLE_ID,
+			USER_ID
+		)
+		values(
+			#{roleId},
+			#{username}
+		)
+	</insert>
+</mapper>

@@ -1,0 +1,60 @@
+#top-div{
+    height:38px;
+    font-size: 13px;
+}
+#title{
+    color: #0e90d2;
+}
+#ico{
+    position: relative;
+    top:4px;
+    color: #28446199;
+}
+#top-button{
+    width:372px;
+    position: relative;
+    left: 71%;
+    top:-20px;
+}
+#centre-div{
+    height:35px;
+    border: #51454561 1px ridge;
+    line-height: 29px;
+}
+#centre-div span{
+    font-size: 13px;
+    color: #0e90d2;
+}
+#centre-ico{
+    position: relative;
+    top:2px;
+    color: #28446199;
+}
+.span-rid,.span-rname,.span-rdesc{
+    display: inline-block;
+    margin: 10px;
+}
+.text-rdesc{
+    position: relative;
+    top:-28px;
+}
+.role-person{
+    position: relative;
+    top:-4px;
+    left:10px;
+}
+#add-role-form{
+    padding: 20px;
+}
+#add-rid,#add-rname,#add-rdesc{
+    width:310px;
+}
+#update-role-form{
+    padding: 20px;
+}
+#update-rid,#update-rname,#update-rdesc{
+    width:310px;
+}
+#search-name{
+    width:200px;
+}

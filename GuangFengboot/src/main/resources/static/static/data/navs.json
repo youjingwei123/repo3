@@ -1,0 +1,68 @@
+[
+    {
+        "title": "首页",
+        "href": "pages/console.html",
+        "icon": "&#xe68e;"
+    },
+	{
+	    "title": "账号管理",
+	    "href": "",
+	    "icon": "&#xe66f;",
+	    "children": [
+	        {
+	            "title": "用户列表",
+	            "href": "/page/403.html",
+	            "icon": "&#xe62e;"
+	        }
+	    ]
+	},
+	{
+		"title": "门店资料",
+		"href": "pages/stores/stores.html",
+		"icon": "&#xe705;"
+	},
+	{
+		"title": "创库配置",
+		"href": "pages/stores/stores.html",
+		"icon": "&#xe610;"
+	},
+	{
+		"title": "商品配置",
+		"href": "pages/stores/stores.html",
+		"icon": "&#xe656;",
+		"children": [
+			{
+				"title": "商品大类",
+				"href": "index.html",
+				"icon": "&#xe62e;"
+			},
+			{
+				"title": "商品小类",
+				"href": "index.html",
+				"icon": "&#xe62e;"
+			},
+			{
+				"title": "品牌管理",
+				"href": "index.html",
+				"icon": "&#xe62e;"
+			},
+			{
+				"title": "商品属性",
+				"href": "index.html",
+				"icon": "&#xe62e;"
+			}
+		]
+	},
+	{
+		"title": "评估鉴定",
+		"href": "index.html",
+		"icon": "&#xe611;",
+		"children": [
+			{
+				"title": "商品列表",
+				"href": "index.html",
+				"icon": "&#xe62e;"
+			}
+		]
+	}
+]

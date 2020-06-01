@@ -1,0 +1,90 @@
+# 请求设置
+server:
+  port: 8089
+  
+#application.yml数据源配置：
+spring:
+  datasource:
+    url: "jdbc:mysql://127.0.0.1:3306/ssmboot?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai"  
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: "root"
+    password: "root"
+    #alibaba 数据源配置属性:
+    druid:
+      initial-size: 5
+      min-idle: 1
+      max-active: 20
+      query-timeout: 6000
+      #设置removeAbandoned="true"时，当连接池连接数到达(getNumIdle() < 2) and (getNumActive() > getMaxActive() - 3)  [空闲的连接小于2并且活动的连接大于(最大连接-3)] 时便会启动连接回收，
+      #那种活动时间超过removeAbandonedTimeout="1800"的连接将会被回收，
+      #同时如果logAbandoned="true"设置为true,程序在回收连接的同时会打印日志。
+      #removeAbandoned是连接池的高级功能，理论上这中配置不应该出现在实际的生产环境，因为有时应用程序执行长事务，可能这种情况下，会被连接池误回收，该种配置一般在程序测试阶段，为了定位连接泄漏的具体代码位置，被开启。
+      #生产环境中连接的关闭应该靠程序自己保证。
+      #先关着
+      remove-abandoned: false
+       #必须要remove-abandoned为false才能生效，这样连接出问题的时候，每隔3000秒请求
+      async-init: true
+      time-between-connect-error-millis: 3000
+ 
+      #先关着
+      log-abandoned: false
+      transaction-query-timeout: 6000
+      remove-abandoned-timeout: 1800
+      filters: wall,stat
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=10000
+      stat-view-servlet:
+        login-username: bda
+        login-password: bda
+        url-pattern: /druid/*
+        reset-enable: false
+      web-stat-filter:
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+       #超时重试次数
+      connection-error-retry-attempts: 3
+      #必须为false（失败后会不断请求数据库，请求在TIME-WAIT，在数据库服务重启后，所有等待请求会访问数据库），
+      #为true上面参数才会生效（：true表示pool向数据库上面的重试请求连接此时失败后标记整个pool为block并close，
+      #就算后端数据库恢复正常也不进行重连，客户端对pool的请求都拒绝掉。false表示不会标记 pool为block，新的请求都会尝试去数据库请求connection。
+      #默认为false。因此，如果想让数据库和网络故障恢复之后，pool能继续请求正常资源必须把此项配置设为false）
+      break-after-acquire-failure: false
+      #检查连接正常的sql
+      validation-query: select 1 from dual
+      #配置多久检测一次空闲连接（可以选择是否尽早关闭连接，看压力在server还是数据库端）
+      time-between-eviction-runs-millis: 60000
+      #数据库连接最小生存时间
+      min-evictable-idle-time-millis: 300000
+      
+      
+# xml映射 配置属性 :
+mybatis:
+  mapper-locations: classpath:mappers/*.xml 
+  #打印sql属性:
+  configuration:
+    log-impl: "org.apache.ibatis.logging.stdout.StdOutImpl"
+    # pagehelper的分页插件属性
+pagehelper:
+  helper-dialect: "mysql"
+  page-size-zero: true
+  reasonable: true
+
+---
+ #当环境为dev时采用该配置
+spring:
+  profiles: dev 
+server:
+  tomcat:
+    uri-encoding: utf-8
+  port: 8080
+---
+#当环境为prod时采用该配置
+spring:
+  profiles: prod
+server:
+  tomcat:
+    uri-encoding: utf-8
+  port: 8082
+ 
+
+
+
+  

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单管理</title>
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery-easyui-1.7.0/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery-easyui-1.7.0/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css" />
+    <link rel="stylesheet" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../../lib/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../js/commom.js"></script>
+</head>
+<body>
+    <div id="top-div">
+        <i class="fa fa-th fa-2x" id="ico" aria-hidden="true"></i>
+        <span id="title">菜单管理</span>
+        <div id="top-button">
+            <a href="#" class="easyui-linkbutton" id="add-first" >增加一级菜单</a>
+            <a href="#" class="easyui-linkbutton" id="add-latter" >增加下级菜单</a>
+            <a href="#" class="easyui-linkbutton" id="update" >修改菜单</a>
+            <a href="#" class="easyui-linkbutton" id="remove" >删除菜单</a>
+        </div>
+    </div>
+    <div id="centre-div" >
+        <i class="fa fa-list fa-3px" id="centre-ico" aria-hidden="true"></i>
+         <span>菜单列表</span>
+    </div>
+
+    <table id="table" class="easyui-treegrid"></table>
+
+    <!--增加第一级菜单-->
+    <div id="add-div" class="easyui-dialog">
+        <form id="add-first-form">
+            <span>菜单名称：<input class="easyui-textbox" name="title" id="add-title" /></span><br /><br />
+            <span>菜单URL：<input class="easyui-textbox" name="href" id="add-url" /></span><br /><br />
+            <span>菜单图标：<input class="easyui-textbox" name="icon" id="add-icon" /></span><br /><br />
+            <span><input class="easyui-checkbox" name="sys" value="是"> 是否系统菜单</span>
+        </form>
+    </div>
+    <!--增加子菜单-->
+    <div id="add-child-div" class="easyui-dialog">
+        <form id="add-child-form">
+            <input id="fid" type="hidden" name="fid" />
+            <span>菜单名称：<input class="easyui-textbox" name="title" id="add-child-title" /></span><br /><br />
+            <span>菜单URL：<input class="easyui-textbox" name="href" id="add-child-url" /></span><br /><br />
+            <span>菜单图标：<input class="easyui-textbox" name="icon" id="add-child-icon" /></span><br /><br />
+            <span><input class="easyui-checkbox" name="sys" value="是"> 是否系统菜单</span>
+        </form>
+    </div>
+    <!--更新菜单-->
+    <div id="update-div" class="easyui-dialog">
+        <form id="update-form">
+            <input type="hidden" id="mid" name="mid" />
+            <span>菜单名称：<input class="easyui-textbox" name="title" id="update-title" /></span><br /><br />
+            <span>菜单URL：<input class="easyui-textbox" name="href" id="update-url" /></span><br /><br />
+            <span>菜单图标：<input class="easyui-textbox" name="icon" id="update-icon" /></span><br /><br />
+            <span><input class="easyui-checkbox" name="sys" value="是"> 是否系统菜单</span>
+        </form>
+    </div>
+</body>
+    <script src="js/menu.js"></script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery-easyui-1.7.0/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/jquery-easyui-1.7.0/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/user.css" />
+    <link rel="stylesheet" href="../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../../lib/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../lib/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../../js/commom.js"></script>
+</head>
+<body>
+<div id="top-div">
+    <i class="fa fa-th fa-2x" id="ico" aria-hidden="true"></i>
+    <span id="title">用户管理</span>
+    <div id="top-button">
+        <a href="#" class="easyui-linkbutton" id="search" >查询用户</a>
+        <a href="#" class="easyui-linkbutton" id="add" >新增用户</a>
+        <a href="#" class="easyui-linkbutton" id="update" >修改用户</a>
+        <a href="#" class="easyui-linkbutton" id="remove" >删除用户</a>
+    </div>
+</div>
+<form id="search-form">
+    <div id="centre-div" >
+        <i class="fa fa-list fa-3px" id="centre-ico" aria-hidden="true"></i>
+        <span>用户列表</span>&emsp;&emsp;
+        <span id="span-username">用户名：<input id="search-username" name="username" class="easyui-textbox"></span>&emsp;
+        <span id="span-name">姓名：<input id="search-name" name="name" class="easyui-textbox"></span>&emsp;
+        <span id="span-sex">性别：
+            <select class="easyui-combobox" name="sex" style="width: 84px;height: 24px">
+                <option value="">--请选择--</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
+            </select>
+        </span>&emsp;
+    </div>
+</form>
+
+<table id="table" class="easyui-datagrid"></table>
+<!--新增对话框-->
+<div id="add-user-div" class="easyui-dialog">
+    <form id="add-user">
+        <span class="span-username">用户名：<input class="easyui-textbox" name="username" id="add-username" /></span>
+        <span class="span-password">密&emsp;码：<input class="easyui-passwordbox" name="password" id="add-password" /></span>
+        <span class="span-name">姓&emsp;名：<input class="easyui-textbox" name="name" id="add-name" /></span>
+        <span class="span-phone">电&emsp;话：<input class="easyui-numberbox" name="phone" id="add-phone" /></span>
+        <span class="span-qq">Q&emsp;Q：<input class="easyui-numberbox" name="qq" id="add-qq" /></span>
+        <span class="span-email">邮&emsp;箱：<input class="easyui-textbox" name="email" id="add-email" /></span>
+        <span class="span-weChat">微&emsp;信：<input class="easyui-textbox" name="weChat" id="add-weChat" /></span>
+        <span class="span-sex">性&emsp;别：男&ensp;<input class="easyui-radiobutton" name="sex" id="add-sex" value="男" />&emsp;&emsp;女&ensp;<input class="easyui-radiobutton" name="sex" value="女"/></span>
+        <span class="span-credentialsNonExpired">到&emsp;期：<input class="easyui-checkbox" value="false" name="credentialsNonExpired" id="add-credentialsNonExpired" /></span>
+        <span class="span-accountNonExpired">有&emsp;效：<input checked="checked" class="easyui-checkbox" value="true" name="accountNonExpired" id="add-accountNonExpired" /></span>
+        <span class="span-enabled">启&emsp;用：<input checked="checked" class="easyui-checkbox" name="enabled" value="true" id="add-enabled" /></span>
+        <span class="span-accountNonLocked">锁&emsp;定：<input class="easyui-checkbox" value="false" name="accountNonLocked" id="add-accountNonLocked" /></span>
+    </form>
+</div>
+<!--修改对话框-->
+<div id="update-user-div" class="easyui-dialog">
+    <form id="update-user">
+        <span class="update-span-username">用户名：<input class="easyui-textbox" name="username" id="update-username" /></span>
+        <span class="update-span-name">姓&emsp;名：<input class="easyui-textbox" name="name" id="update-name" /></span>
+        <span class="update-span-phone">电&emsp;话：<input class="easyui-numberbox" name="phone" id="update-phone" /></span>
+        <span class="update-span-qq">Q&emsp;Q：<input class="easyui-numberbox" name="qq" id="update-qq" /></span>
+        <span class="update-span-email">邮&emsp;箱：<input class="easyui-textbox" name="email" id="update-email" /></span>
+        <span class="update-span-weChat">微&emsp;信：<input class="easyui-textbox" name="weChat" id="update-weChat" /></span>
+        <span class="update-span-sex">性&emsp;别：男&ensp;<input class="easyui-radiobutton" name="sex" value="男" />&emsp;&emsp;女&ensp;<input class="easyui-radiobutton" name="sex" value="女"/></span>
+        <span class="update-span-accountNonExpired">有&emsp;效：<input checked="checked" class="easyui-checkbox" value="true" name="accountNonExpired" id="update-accountNonExpired" /></span>
+        <span class="update-span-credentialsNonExpired">到&emsp;期：<input class="easyui-checkbox" value="false" name="credentialsNonExpired" id="update-credentialsNonExpired" /></span>
+        <span class="update-span-enabled">启&emsp;用：<input checked="checked" class="easyui-checkbox" name="enabled" value="true" id="update-enabled" /></span>
+        <span class="update-span-accountNonLocked">锁&emsp;定：<input class="easyui-checkbox" value="false" name="accountNonLocked" id="update-accountNonLocked" /></span>
+    </form>
+</div>
+</body>
+<script type="text/javascript" src="js/user.js"></script>
+</html>

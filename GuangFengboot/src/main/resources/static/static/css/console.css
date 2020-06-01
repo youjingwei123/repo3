@@ -1,0 +1,11 @@
+#welecom{
+	color: #33334594;
+}
+#main-div{
+	position: absolute;
+	left:50%;
+	top:40%;
+	transform: translate(-50%,-100%);
+	width:310px;
+	height:210px;
+}

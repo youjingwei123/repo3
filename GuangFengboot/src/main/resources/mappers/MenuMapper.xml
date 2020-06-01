@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.2//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gf.Dao.MenuDao">
+	<!-- 菜单xml -->
+	<sql id="resultMenu">
+		menu_id,
+		menu_name,
+		p_menu_id,
+		url,
+		is_sys_manage,
+		state,
+		sort_no
+	</sql>
+		<!-- 根据上级菜单编号加载下级树 -->
+	<select id="findMenu" parameterType="com.gf.Po.SysMenuPo" resultType="com.gf.Po.SysMenuPo">
+		select
+		<include refid="resultMenu"/>
+			from sys_menu 
+		<where>
+			 <if test="p_menu_id != null and p_menu_id != ''">
+	        		p_menu_id = #{p_menu_id}
+	        	</if>
+		</where>
+		order by sort_no
+	</select>
+	
+	<!-- 根据菜单编号查询菜单信息 -->
+	<select id="findById" parameterType="com.gf.Po.SysMenuPo" resultType="com.gf.Po.SysMenuPo">
+		select
+		<include refid="resultMenu"/>
+			from sys_menu 
+			where menu_id = #{menu_id}
+	</select>
+	<!-- 新增菜单 -->
+		<insert id="addSysMenu" parameterType="com.gf.Po.SysMenuPo">
+		insert into sys_menu (
+			menu_id,
+			menu_name,
+			p_menu_id,
+			url,
+			default_img,
+			is_sys_manage,
+			sort_no,
+			state
+		) values (
+			#{menu_id},
+			#{menu_name},
+			#{p_menu_id},
+			#{url},
+			#{default_img},
+			#{is_sys_manage},
+			#{sort_no},
+			#{state}
+		)
+	</insert>
+	
+	<!-- 根据菜单编号修改信息 -->
+	<update id="modifySysMenu" parameterType="com.gf.Po.SysMenuPo">
+		update sys_menu
+		set
+			menu_name = #{menuName},
+			url = #{url},
+			default_img = #{default_img},
+			is_sys_manage = #{isSysManage},
+			is_sys_manage = #{is_sys_manage},
+			sort_no = #{sort_no},
+			state = #{state}
+		where menu_id = #{menu_id}
+	</update>
+	<!-- 根据 状态删除无效菜单 -->
+	<delete id="deleteSysMenu" parameterType="com.gf.Po.SysMenuPo">
+			delete from sys_menu  where menu_id = #{menu_id}  and state="无效"
+	</delete>
+</mapper>

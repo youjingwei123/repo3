@@ -1,0 +1,50 @@
+#top-div{
+    height:38px;
+    font-size: 13px;
+}
+#title{
+    color: #0e90d2;
+}
+#ico{
+    position: relative;
+    top:4px;
+    color: #28446199;
+}
+#top-button{
+    width:428px;
+    position: relative;
+    right: -67%;
+    top:-20px;
+}
+#centre-div{
+    height:30px;
+    border: #51454561 1px ridge;
+    line-height: 30px;
+}
+#centre-div span{
+    font-size: 13px;
+    color: #0e90d2;
+}
+#centre-ico{
+    position: relative;
+    top:2px;
+    color: #28446199;
+}
+#add-div{
+    padding: 20px;
+}
+#add-title,#add-url,#add-icon{
+    width:230px;
+}
+#add-child-div{
+    padding: 20px;
+}
+#add-child-title,#add-child-url,#add-child-icon{
+    width:230px;
+}
+#update-div{
+    padding: 20px;
+}
+#update-title,#update-url,#update-icon{
+    width:230px;
+}

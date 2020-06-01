@@ -1,0 +1,166 @@
+#top-div{
+    height:38px;
+    font-size: 13px;
+}
+#title{
+    color: #0e90d2;
+}
+#ico{
+    position: relative;
+    top:4px;
+    color: #28446199;
+}
+#top-button{
+    width:372px;
+    position: relative;
+    left: 71%;
+    top:-20px;
+}
+#centre-div{
+    height:35px;
+    border: #51454561 1px ridge;
+    line-height: 28px;
+}
+#centre-div span{
+    font-size: 13px;
+    color: #0e90d2;
+}
+#centre-ico{
+    position: relative;
+    top:2px;
+    color: #28446199;
+}
+#add-user{
+    padding: 20px;
+}
+.span-username,.span-password{
+    display: inline-block;
+    margin: 10px;
+}
+.span-enabled{
+    display: inline-block;
+    position: relative;
+    top: 70px;
+    left:75px;
+}
+.span-credentialsNonExpired{
+    display: inline-block;
+    position: relative;
+    top: 97px;
+    left:3px;
+}
+.span-accountNonExpired{
+    display: inline-block;
+    position: relative;
+    top: 70px;
+    left:10px;
+}
+.span-accountNonLocked{
+    display: inline-block;
+    position: relative;
+    top: 70px;
+    left:95px;
+}
+#update-user{
+    padding: 20px;
+}
+.span-name{
+    display: inline-block;
+    position: relative;
+    top:10px;
+    left:10px;
+}
+.span-phone{
+    display: inline-block;
+    position: relative;
+    top:10px;
+    left:30px;
+}
+.span-qq{
+    display: inline-block;
+    position: relative;
+    top:80px;
+    left:259px;
+}
+.span-email{
+    display: inline-block;
+    position: relative;
+    top:30px;
+    left:35px;
+}
+.span-weChat{
+    display: inline-block;
+    position: relative;
+    top:50px;
+    left:10px;
+}
+.span-sex{
+    display: inline-block;
+    position: relative;
+    top:0px;
+    left:-214px;
+}
+.update-span-name{
+    display: inline-block;
+    position: relative;
+    top:0px;
+    left:30px;
+}
+.update-span-phone{
+    display: inline-block;
+    position: relative;
+    top:20px;
+    left:0px;
+}
+.update-span-qq{
+    display: inline-block;
+    position: relative;
+    top:120px;
+    left:-219px;
+}
+.update-span-email{
+    display: inline-block;
+    position: relative;
+    top:40px;
+    left:0px;
+}
+.update-span-weChat{
+    display: inline-block;
+    position: relative;
+    top:40px;
+    left:30px;
+}
+.update-span-sex{
+    display: inline-block;
+    position: relative;
+    top:-37px;
+    left:255px;
+}
+.update-span-enabled{
+    display: inline-block;
+    position: relative;
+    top: 67px;
+    left:68px;
+}
+.update-span-credentialsNonExpired{
+    display: inline-block;
+    position: relative;
+    top: 105px;
+    left:4px;
+}
+.update-span-accountNonExpired{
+    display: inline-block;
+    position: relative;
+    top: 67px;
+    left:83px;
+}
+.update-span-accountNonLocked{
+    display: inline-block;
+    position: relative;
+    top: 107px;
+    left:-12px;
+}
+/*
+#add-username,#add-password,#add-name,#add-phone{
+    width:200px;
+}*/

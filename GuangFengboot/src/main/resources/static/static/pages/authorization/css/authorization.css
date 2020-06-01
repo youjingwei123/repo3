@@ -1,0 +1,32 @@
+#top-div{
+    height:38px;
+    font-size: 13px;
+}
+#title{
+    color: #0e90d2;
+}
+#ico{
+    position: relative;
+    top:4px;
+    color: #28446199;
+}
+#top-button{
+    width:62px;
+    position: relative;
+    right: -95%;
+    top:-20px;
+}
+#centre-div{
+    height:30px;
+    border: #51454561 1px ridge;
+    line-height: 30px;
+}
+#centre-div span{
+    font-size: 13px;
+    color: #0e90d2;
+}
+#centre-ico{
+    position: relative;
+    top:2px;
+    color: #28446199;
+}

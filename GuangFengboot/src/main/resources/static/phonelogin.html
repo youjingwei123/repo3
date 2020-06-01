@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>广丰典当管理系统登录</title>
+  <link href="easyui/themes/material-blue/easyui.css" rel="stylesheet" />
+    <link href="easyui/themes/icon.css" rel="stylesheet" />
+    <script src="easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="js/Particleground.js"></script>
+    <script src="easyui/jquery.easyui.min.js"></script>
+    <script src="easyui/locale/easyui-lang-zh_CN.js"></script>
+    <style>
+        html, body
+        {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1
+        {
+            color: rgb(128, 128, 128);
+            text-align: center;
+        }
+
+        a:link, a:hover, a:visited, a:active
+        {
+            color: rgb(128, 128, 128);
+            text-decoration: none;
+        }
+
+        form
+        {
+            width: 400px;
+            min-width: 400px;
+            position: absolute;
+            left: 40%;
+            top: 15%;
+            margin: 0;
+            padding: 30px;
+            background-color: white;
+            border: 2px solid rgba(128, 128, 128, 0.2);
+            border-radius: 10px;
+        }
+
+            form div
+            {
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+<script>
+		$(document).ready(function() {
+			 //粒子背景特效
+			 $('body').particleground({
+			dotColor: 'rgba(42,119,168,0.5)',
+			lineColor: 'rgba(37,103,144,0.7)'
+			 });
+		});
+	</script>
+<body>
+    <form action="" method="post">
+        <div>
+            <h1>广丰典当管理系统</h1>
+        </div>
+        <div>
+            <input class="easyui-textbox" data-options="iconCls:'icon-man',iconWidth:30,iconAlign:'left',prompt:'请输入手机'" style="width:60%;height:35px;" />
+        </div>
+        <div>
+            <input class="easyui-textbox" data-options="iconCls:'icon-tip',iconWidth:30,iconAlign:'left',prompt:'请输入验证码'" style="width:60%;height:35px;" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<input class="easyui-linkbutton" type="button" value="获取验证码" style="width:30%;height:35px;" />
+        </div>
+        <div>
+            <input class="easyui-checkbox" label="同意用户协议" labelPosition="after" labelWidth="120" />
+        </div>
+        <br>
+        <div>
+            <input class="easyui-linkbutton" type="submit" value="登陆" style="width:100%;height:35px;" />
+        </div>
+        <div>
+        <br>
+        	<div  style="display:inline;">
+                 <span style="color:rgb(128, 128, 128)">社交软件登录</span>
+        <div style="display:inline;position: absolute;top:322px;left:135px">
+                <a href="javascript:void(0)"><img alt="" src="img/qq.png" style="width:30px;height:30px;border-radius: 10px"></a>&nbsp;
+            	<a href="javascript:void(0)"><img alt="" src="img/weixin.png" style="width:30px;height:30px;border-radius: 10px"></a>&nbsp;
+            	<a href="javascript:void(0)"><img alt="" src="img/weibo.png" style="width:30px;height:30px;border-radius: 10px"></a>&nbsp;
+            </div>
+            <div style="display:inline;margin-left:240px;">
+                <a href="login.html" style="color:#4EB4AA">其他账号登录</a>
+            </div>
+        </div>
+        
+        </div>
+    </form>
+    
+</body>
+</html>
